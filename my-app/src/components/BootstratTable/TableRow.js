@@ -1,7 +1,6 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
 const TableRow = (props) => {
-
     return (
         <tbody className="table-light">
             <tr>
@@ -9,7 +8,7 @@ const TableRow = (props) => {
                     <Form.Check
                         type={'checkbox'}
                         id={props.value.id}
-                        onChange={e => console.log(props.value.id)}
+                        onClick={() => { props.updateData(props.value.id) }}
                     />
                 </td>
                 <td>{props.value.id}</td>

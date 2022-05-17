@@ -1,12 +1,12 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { Container, Card, Form, Button, Row } from 'react-bootstrap';
 const LoginForm = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
     const click = async () => {
-        console.log("email:"+email)
-        console.log("password:"+password)
+        console.log("email:" + email)
+        console.log("password:" + password)
         setEmail('')
         setPassword('')
     }
@@ -32,9 +32,9 @@ const LoginForm = () => {
                         <div>
                             <a href='#'>Registration</a>
                         </div>
-                        <Button 
-                        variant={"outline-success"}
-                        onClick={() => click()}
+                        <Button
+                            variant={"outline-success"}
+                            onClick={() => click()}
                         >
                             Login
                         </Button>
