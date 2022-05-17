@@ -4,6 +4,7 @@ import TableBootsTrap from './components/BootstratTable/TableBootsTrap';
 import LoginForm from './components/BootstrapLoginForm/LoginForm';
 import Registration from './components/BootstrapRegistrationForm/Registration';
 import NavBarBootsTrap from './components/NavBar/NavBarBootsTrap';
+import StrartModal from './components/Modals/StartModal';
 import { useState } from 'react';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
   return (
     <div className="App">
       <NavBarBootsTrap />
+      <StrartModal/>
       <TableBootsTrap head={headerTable} rows={rowsTable} />
       <LoginForm />
       <Registration />
