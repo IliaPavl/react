@@ -7,7 +7,10 @@ const Registration = () => {
     const click = async () => {
         console.log("email:" + email)
         console.log("password:" + password)
-        console.log("login:" + setLogin)
+        console.log("login:" + login)
+        setEmail('')
+        setPassword('')
+        setLogin('')
     }
     return (
         <Container

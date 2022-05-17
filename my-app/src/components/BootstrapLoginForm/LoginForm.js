@@ -7,6 +7,8 @@ const LoginForm = () => {
     const click = async () => {
         console.log("email:"+email)
         console.log("password:"+password)
+        setEmail('')
+        setPassword('')
     }
     return (
         <Container className="d-flex justify-content-center align-items-center mt-5">
