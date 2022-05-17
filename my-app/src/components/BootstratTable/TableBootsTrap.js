@@ -1,7 +1,8 @@
 import React, { useCallback } from 'react';
-import { Container, Table, Col, Row, Button, Form } from 'react-bootstrap';
+import { Container, Table, Col, Row, Button } from 'react-bootstrap';
 import TableRow from './TableRow';
 import TableHead from './TableHead';
+import MySelect from '../UI/selects/SetTableSelect'
 
 const TableBootsTrap = (props) => {
 
@@ -30,9 +31,13 @@ const TableBootsTrap = (props) => {
   return (
     <Container className='mt-2'>
       <Col>
+      <Row>
+      <MySelect/>
+      </Row>
         <Row>
           <Button className="m-1" onClick={() => getBox()}>get checkbox</Button>
           <Button className="m-1" onClick={() => uncheck()}>uncheck</Button>
+          <Button className="m-1" onClick={() => uncheck()}>sort</Button>
         </Row>
         <Row>
           <Table variant='table-bordered table-hover'>
