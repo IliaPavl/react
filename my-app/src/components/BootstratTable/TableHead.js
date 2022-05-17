@@ -1,13 +1,13 @@
 import React from 'react';
+import {  } from 'react-bootstrap';
 
-const TableHead = () => {
+const TableHead = (props) => {
     return (
         <thead className="thead-dark">
             <tr>
-                <th>id</th>
-                <th>email</th>
-                <th>login</th>
-                <th>role</th>
+             {props.value.map((prop) => (
+                 <th key={prop.title}>{prop.title}</th>
+            ))}
             </tr>
         </thead>
     );

@@ -1,13 +1,21 @@
 import React from 'react';
+import { Form } from 'react-bootstrap';
+const TableRow = (props) => {
 
-const TableRow = () => {
     return (
         <tbody className="table-light">
             <tr>
-                <td>id</td>
-                <td>id</td>
-                <td>id</td>
-                <td>id</td>
+                <td>
+                    <Form.Check
+                        type={'checkbox'}
+                        id={props.value.id}
+                        onChange={e => console.log(props.value.id)}
+                    />
+                </td>
+                <td>{props.value.id}</td>
+                <td>{props.value.email}</td>
+                <td>{props.value.login}</td>
+                <td>{props.value.role}</td>
             </tr>
         </tbody>
     );
