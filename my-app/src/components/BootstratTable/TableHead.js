@@ -1,12 +1,19 @@
 import React from 'react';
+import classes from './TableBootsTrap.css'
 
-const TableHead = (props) => {
+const TableHead = ({ values, sorting }) => {
     return (
-        <thead className="thead-dark">
+        <thead className="thead-dark ">
             <tr>
-             {props.value.map((prop) => (
-                 <th key={prop.title}>{prop.title}</th>
-            ))}
+                <th></th>
+                {values.map((value) => (
+                    <th
+                        key={value.title}
+                        onClick={() => { sorting(value.title) }}
+                    >
+                        <p className='gain-center'>{value.title}</p>
+                    </th>
+                ))}
             </tr>
         </thead>
     );

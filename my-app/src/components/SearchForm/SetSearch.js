@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchBotsTrap from './SearchBotsTrap';
+import Search from './SearchWithButton';
 
 
 const SetSearch = () => {
@@ -7,7 +7,7 @@ const SetSearch = () => {
         console.log(seachMessege)
     };
     return (
-        <SearchBotsTrap backSearch={search} />
+        <Search backSearch={search} />
     );
 };
 

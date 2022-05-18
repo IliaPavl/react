@@ -1,0 +1,8 @@
+.gain-center {
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.gain-center:hover {
+    transform: scale(1.2);
+}

@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { Button, Form, FormControl } from "react-bootstrap";
 
-const SearchBotsTrap = ({ backSearch }) => {
+const SearchWithButton = ({ backSearch }) => {
     const [search, setSearch] = useState('')
     const clickSearch = () => {
         backSearch(search)
         setSearch('')
     }
     return (
-        <Form className="d-flex ml-auto">
+
+        <Form className="d-flex ml-auto m-1">
             <FormControl
                 type="search"
                 placeholder="Search"
@@ -21,10 +22,10 @@ const SearchBotsTrap = ({ backSearch }) => {
                 className='ml-2'
                 variant="outline-success"
                 onClick={() => clickSearch()}
-            >
-                Search</Button>
+            >Search</Button>
         </Form>
+
     );
 };
 
-export default SearchBotsTrap;
+export default SearchWithButton;

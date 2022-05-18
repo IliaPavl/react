@@ -1,9 +1,17 @@
-import React, { } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Container, Table, Col, Row, Button } from 'react-bootstrap';
 import TableRow from './TableRow';
 import TableHead from './TableHead';
+import SearchWithButton from '../SearchForm/SearchWithButton';
+import SearchLable from '../SearchForm/SearchLable'
 
 const TableBootsTrap = ({ head, rows }) => {
+
+  const [table, setTable] = useState([])
+
+  useEffect(() => {
+    setTable(rows)
+  }, []);
 
   let massiv = []
 
@@ -23,6 +31,18 @@ const TableBootsTrap = ({ head, rows }) => {
       massiv.push(value)
   };
 
+  const sorting = (sortValue) => {
+    setTable([...table].sort((a, b) => a[sortValue].toString().localeCompare(b[sortValue].toString())))
+  };
+
+  const search = (seachMessege) => {
+    console.log(seachMessege)
+  };
+
+  const search2 = useMemo(() =>{
+
+  },['email',table]);
+
   function getBox() {
     console.log(massiv);
   }
@@ -33,12 +53,13 @@ const TableBootsTrap = ({ head, rows }) => {
         <Row>
           <Button className="m-1" onClick={() => getBox()}>get checkbox</Button>
           <Button className="m-1" onClick={() => uncheck()}>uncheck</Button>
-          <Button className="m-1" onClick={() => uncheck()}>sort</Button>
+          <SearchWithButton backSearch={search} />
+          <SearchLable backSearch={search}/>
         </Row>
         <Row>
           <Table variant='table-bordered table-hover'>
-            <TableHead value={head} />
-            {rows.map((type) => (
+            <TableHead values={head} sorting={sorting} />
+            {table.map((type) => (
               <TableRow key={type.id} value={type} updateData={updateData} />
             ))}
           </Table>
