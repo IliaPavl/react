@@ -1,20 +1,24 @@
 import React from 'react';
-import MyVerticallyCenteredModal from './MyVerticallyCenteredModal';
+import CustomModal from './CustomModal';
 import { Button } from 'react-bootstrap';
 
-const StartModal = () => {
+const StartModal = ({ head, headBody, buttonModal, children }) => {
     const [modalShow, setModalShow] = React.useState(false);
 
     return (
         <>
             <Button variant="primary" onClick={() => setModalShow(true)}>
-                Launch vertically centered modal
+                {buttonModal}
             </Button>
 
-            <MyVerticallyCenteredModal
+            <CustomModal
                 show={modalShow}
                 onHide={() => setModalShow(false)}
-            />
+                head={head}
+                headBody={headBody}
+            >
+                {children}
+            </CustomModal>
         </>
     );
 };

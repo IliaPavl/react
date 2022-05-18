@@ -2,7 +2,7 @@ import React from 'react';
 import { Button,Modal} from 'react-bootstrap';
 
 
-const MyVerticallyCenteredModal = (props) => {
+const CustomModal = (props) => {
     return (
         <Modal
             {...props}
@@ -12,16 +12,14 @@ const MyVerticallyCenteredModal = (props) => {
         >
             <Modal.Header>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Modal heading
+                    {props.head}
                 </Modal.Title>
                 <Button onClick={props.onHide} variant={'outline-danger'}>X</Button>
             </Modal.Header>
             <Modal.Body>
-                <h4>Centered Modal</h4>
+                <h4>{props.headBody}</h4>
                 <p>
-                    Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                    dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-                    consectetur ac, vestibulum at eros.
+                    {props.children}
                 </p>
             </Modal.Body>
             <Modal.Footer>
@@ -31,4 +29,4 @@ const MyVerticallyCenteredModal = (props) => {
     );
 };
 
-export default MyVerticallyCenteredModal;
+export default CustomModal;

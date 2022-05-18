@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Button, Form, FormControl } from "react-bootstrap";
 
-const SearchBotsTrap = () => {
+const SearchBotsTrap = ({ backSearch }) => {
     const [search, setSearch] = useState('')
     const clickSearch = () => {
+        backSearch(search)
         setSearch('')
-        console.log(search)
     }
     return (
         <Form className="d-flex ml-auto">

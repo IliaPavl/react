@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar, Container, NavDropdown, Nav } from "react-bootstrap";
-import SearchBotsTrap from '../SearchForm/SearchBotsTrap';
+import SetSearch from '../SearchForm/SetSearch';
 
 const NavBarBootsTrap = () => {
     return (
@@ -26,7 +26,7 @@ const NavBarBootsTrap = () => {
                             Dank memes
                         </Nav.Link>
                     </Nav>
-                    <SearchBotsTrap />
+                    <SetSearch />
                 </Navbar.Collapse>
             </Container>
         </Navbar>

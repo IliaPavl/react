@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { Container, Card, Form, Button, Row } from 'react-bootstrap';
 const Registration = () => {
     const [email, setEmail] = useState('')
